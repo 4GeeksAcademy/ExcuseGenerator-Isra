@@ -53,7 +53,7 @@ function GenereExcuse(who, action, what, when) {
 
 function newExcuse() {
   document.querySelector("#btnExcuse").addEventListener("click", function () {
-    var excusaa = GenereExcuse(who, action, what, when);
+    let excusaa = GenereExcuse(who, action, what, when);
     document.querySelector("#excusa").textContent = excusaa;
   });
 }
