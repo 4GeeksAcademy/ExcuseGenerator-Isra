@@ -1,10 +1,4 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-window.onload = function() {
+window.onload = function () {
   //write your code here
   newExcuse();
 };
@@ -15,7 +9,7 @@ const who = [
   "My grandma",
   "His bird",
   "My neighbor",
-  "The delivery guy"
+  "The delivery guy",
 ];
 const action = ["ate", "crushed", "broke", "peed", "stole", "lost"];
 const what = [
@@ -25,7 +19,7 @@ const what = [
   "the car",
   "my phone",
   "my lunch",
-  "the computer"
+  "the computer",
 ];
 const when = [
   "before the class",
@@ -35,31 +29,31 @@ const when = [
   "in the morning",
   "at midnight",
   "while I was at the store",
-  "during the meeting"
+  "during the meeting",
 ];
 
-function GenereExcuse(arr1, arr2, arr3, arr4) {
+function GenereExcuse(who, action, what, when) {
   let excuse = "";
-  let rand1 = Math.floor(Math.random() * arr1.length);
-  let rand2 = Math.floor(Math.random() * arr1.length);
-  let rand3 = Math.floor(Math.random() * arr1.length);
-  let rand4 = Math.floor(Math.random() * arr1.length);
+  let whoRandom = Math.floor(Math.random() * who.length);
+  let actionRandom = Math.floor(Math.random() * action.length);
+  let whatRandom = Math.floor(Math.random() * what.length);
+  let whenRandom = Math.floor(Math.random() * when.length);
 
   excuse =
-    arr1[rand1] +
+    who[whoRandom] +
     " " +
-    arr2[rand2] +
+    action[actionRandom] +
     " " +
-    arr3[rand3] +
+    what[whatRandom] +
     " " +
-    arr4[rand4] +
+    when[whenRandom] +
     ".";
   return excuse;
 }
 
 function newExcuse() {
-  document.querySelector("#btnExcuse").addEventListener("click", function() {
-    let excusaa = GenereExcuse(who, action, what, when);
+  document.querySelector("#btnExcuse").addEventListener("click", function () {
+    var excusaa = GenereExcuse(who, action, what, when);
     document.querySelector("#excusa").textContent = excusaa;
   });
 }
